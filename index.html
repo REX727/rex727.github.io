@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GXP</title>
   <style>
+    @font-face {
+      font-family: 'RohnRounded';
+      src: url('RohnRounded-Medium.ttf') format('truetype');
+    }
+
     body {
       display: flex;
       flex-direction: column;
@@ -12,56 +17,31 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      padding: 10px; /* Small padding for slight spacing */
-      font-family: RohnRounded-Medium;
+      font-family: 'RohnRounded', Arial, sans-serif; /* Use the custom font */
       background-color: #222222;
       color: #ffffff;
-      box-sizing: border-box; /* Include padding in total dimensions */
     }
 
     #time-block {
-      text-align: center; /* Center-align content */
+      text-align: right; /* Align text to the right */
     }
 
     #time {
-      font-size: 22rem; /* Maximize font size for large display */
+      font-size: 20rem;
       font-weight: bold;
       margin: 0;
-      line-height: 1; /* Reduce line height for tighter spacing */
     }
 
     #subtitle {
-      font-size: 7rem; /* Increase subtitle font size */
+      font-size: 6rem; /* Increase font size */
       font-weight: bold;
-      margin-top: 10px; /* Slight space between time and subtitle */
-    }
-
-    /* Responsiveness for smaller screens */
-    @media (max-width: 768px) {
-      #time {
-        font-size: 12rem; /* Scale down font for smaller devices */
-      }
-
-      #subtitle {
-        font-size: 4rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      #time {
-        font-size: 8rem; /* Further reduce font size for very small screens */
-      }
-
-      #subtitle {
-        font-size: 3rem;
-      }
     }
   </style>
 </head>
 <body>
   <div id="time-block">
     <div id="time"></div>
-    <div id="subtitle"></div>
+    <div id="subtitle" id="date-day"></div>
   </div>
 
   <script>
