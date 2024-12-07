@@ -1,13 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rexkwong project's</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GXP</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: RohnRounded-Medium, Arial, sans-serif;
+      background-color: #222222;
+      color: #ffffff;
+    }
+
+    #time-block {
+      text-align: right; /* Align text to the right */
+    }
+
+    #time {
+      font-size: 20rem;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    #subtitle {
+      font-size: 6rem; /* Increase font size */
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <h1>RexKwong Project's</h1>
-    <h2>Project Nova <h2>
+  <div id="time-block">
+    <div id="time"></div>
+    <div id="subtitle" id="date-day"></div>
+  </div>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+
+      // Time
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      document.getElementById('time').textContent = `${hours}:${minutes}`;
+
+      // Date (without year)
+      const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+      const date = String(now.getDate()).padStart(2, '0');
+      const day = ['SUN.', 'MON.', 'TUE.', 'WED.', 'THU.', 'FRI.', 'SAT.'][now.getDay()];
+      
+      document.getElementById('subtitle').textContent = `${month}.${date} ${day}`; // Display month and day only
+    }
+
+    // Update the time and subtitle every second
+    setInterval(updateTime, 1000);
+
+    // Initialize immediately
+    updateTime();
+  </script>
 </body>
 </html>
