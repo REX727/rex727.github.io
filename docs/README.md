@@ -1,5 +1,3 @@
-# 👋 Hello World
-
 # 📊 Github Stats
 <img src="https://github-readme-stats.vercel.app/api?username=REX727&show_icons=true" alt="GitHub Stats" style="max-width: 100%;" />
 </p>
@@ -26,8 +24,3 @@ The **Status Module** is a concept I developed during a project to display statu
   - [ ] 1kΩ resistors
 
 - [ ] 2.45 1x5pin
-
-#### Here some photo:
-![IMG](https://github.com/REX727/Status-Module/blob/main/README-FILE/3D_PCB.png)
-
-
